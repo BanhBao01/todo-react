@@ -16,7 +16,7 @@ class TodoItem extends Component {
                     <i className="fa fa-times" aria-hidden="true"></i>
                 </span>
             </div>
-        );
+        )  
     };
 }
 
