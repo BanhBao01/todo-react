@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+html,
+body {
+    background-color: #282c34;
+    font-size: 16px;
+    padding: unset;
+    margin: unset;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-item {
+    background-color: #282c34;
+    color: white;
+    border: 1px solid #444444;
+    font-size: 16px;
+    height: 42px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.item {
+    display: flex;
+    margin: 15px 0;
+    border-bottom: 1px solid #444444;
+    padding: 15px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.item>a {
+    flex-grow: 1;
+    width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo-complete {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.logo-complete>i {
+    font-size: 25px;
+    color: #444444;
+}
+
+h1 {
+    font-size: 64px;
+    text-align: center;
+    color: #444444;
+    cursor: pointer;
+    margin: 10px 0 30px 0 !important;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+h1:hover {
+    color: white;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.item.checked>.logo-complete>i {
+    color: #efefee;
+}
+
+.item.checked>.title {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.complete-all {
+    border: 1px solid white;
+    background-color: #282c34;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.fiter>a {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.fiter>a.active {
+    border-bottom: 1px solid white;
+}
+
+.not-item {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #444444;
+}
+
+.remove-todo {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    opacity: 0;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.item:hover>.remove-todo {
+    opacity: 1;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.remove-todo>i:hover {
+    color: red;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.remove-todo>i {
+    font-size: 25px;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
 }
