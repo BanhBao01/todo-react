@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TodoItem from './components/TodoItem';
+import { connect } from 'react-redux';
 
 var classNames = require('classnames');
 
@@ -129,14 +130,15 @@ class App extends Component {
 
     render() {
         const { todo } = this.state;
+        const { todos } = this.props;
         return (
             <div className="container">
                 <h1>Totos app</h1>
                 <input type="text" className="add-item" value={todo.title} name="title" onKeyPress={this.enterSubmit()} onChange={this.handleChange()}  placeholder="Enter todo item" />
                 {
-                    this.state.todos.length > 0 ?
-                        this.state.todos.map((todo,i) => 
-                            <TodoItem todo={todo} key={i} onClick={this.onClickComplete(i)} onCickRemove={this.onClickRemoveTodo(i)} />
+                    todos.todos.length > 0 ?
+                        todos.todos.map((todo,i) => 
+                            <TodoItem todo={todo} key={i} onClick={this.onClickComplete(i)} onClickRemove={this.onClickRemoveTodo(i)} />
                         ) :
                         <div className="not-item">Not todos item</div>
                 }
@@ -147,7 +149,7 @@ class App extends Component {
                             <span></span>
                     }
                     <div className="fiter">
-                        <a className={classNames({
+                        <a  className={classNames({
                             active: this.state.activeAcion === 'all'
                         })} onClick={() => this.filterTodos('all')}>All</a>
                         <a className={classNames({
@@ -163,4 +165,11 @@ class App extends Component {
     }
 }
 
-export default App;
+//store
+const mapStatetoProps = (state) => {
+    return {
+        todos: state.tasks
+    }
+}
+
+export default connect(mapStatetoProps, null)(App);
